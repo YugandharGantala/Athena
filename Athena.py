@@ -288,7 +288,7 @@ def graph_controls(chart_type, df, dropdown_options):
     # st.subheader("Chart")
     # st.plotly_chart(plot)
 
-chart_types=['scatterplot', 'piechart']
+chart_types=['scatterplot', 'piechart', 'histogram']
 
 def main():
   st.subheader('1. Upload the dataset')
@@ -338,6 +338,20 @@ def main():
         elif len(a)==2:
           b,c=a
           plot = px.pie(data_frame=df, names=b, color=c)
+          st.plotly_chart(plot)
+
+      elif Chart_type==['histogram']:
+        a= common_elements2(token(text), columns)
+        if len(a)==1:
+          plot = px.histogram(data_frame=df, x=a)
+          st.plotly_chart(plot)
+        elif len(a)==2:
+          b,c=a
+          plot = px.histogram(data_frame=df, x=b, y=c)
+          st.plotly_chart(plot)
+        elif len(a)==3:
+          u,v,w=a
+          plot = px.histogram(data_frame=df, x=u, y=v, color=w)
           st.plotly_chart(plot)
 
       # st.markdown(a)
