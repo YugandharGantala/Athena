@@ -351,7 +351,7 @@ def main():
           st.plotly_chart(plot)
         elif len(a)==3:
           u,v,w=a
-          plot = px.histogram(data_frame=df, x=u, y=v, color=w)
+          plot = px.histogram(data_frame=df, x=u, y=v, color=w, barmode=group)
           st.plotly_chart(plot)
 
       # st.markdown(a)
