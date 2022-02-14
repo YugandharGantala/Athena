@@ -333,7 +333,7 @@ def main():
       elif Chart_type==['piechart']:
         a= common_elements2(token(text), columns)
         if len(a)==1:
-          plot = px.pie(data_frame=df, color=a)
+          plot = px.pie(data_frame=df, names=a, color=a)
           st.plotly_chart(plot)
         elif len(a)==2:
           b,c=a
