@@ -316,7 +316,7 @@ def main():
     if st.button("Visualization"):
       st.subheader(text)
       Chart_type= common_elements2(token(text), chart_types)
-      if Chart_type=='scatterplot':
+      if Chart_type==['scatterplot']:
         a= common_elements2(token(text), columns)
         if len(a)==1:
           plot = px.scatter(data_frame=df, x=a)
@@ -330,7 +330,7 @@ def main():
           plot = px.scatter(data_frame=df, x=d, y=e, color=f)
           st.plotly_chart(plot)
 
-      elif Chart_type=='piechart':
+      elif Chart_type==['piechart']:
         a= common_elements2(token(text), columns)
         if len(a)==1:
           plot = px.pie(data_frame=df, names=a)
