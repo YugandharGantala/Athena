@@ -168,7 +168,8 @@ def graph_controls(chart_type, df, dropdown_options):
             color_value = st.sidebar.selectbox(label='Color(Selected Column should be categorical)', options=dropdown_options)
             title = st.sidebar.text_input(label='Title of chart')
 
-            plot = px.pie(data_frame=df,names=name_value, color=color_value, title=title)
+            #plot = px.pie(data_frame=df,names=name_value, color=color_value, title=title)
+	    plot = name_value.value_counts().plot.pie(autopct="%1.1f%%")
             st.subheader("Chart")
             st.plotly_chart(plot)
 
