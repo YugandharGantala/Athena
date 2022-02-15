@@ -199,14 +199,15 @@ def main():
         df=pd.read_csv(data)
         columns = list(df.columns)
         columns.append(None)
+	st.write(columns)
         st.sidebar.subheader("Chart selection")
         chart_type = st.sidebar.selectbox(label="Select your chart type.",
                                                 options=['None', 'Scatter plots', 'Line Chart', 'Pie Charts',
                                                         'Histogram', 'Box plots', 'Heatmap'])  # 'Line plots',
         graph_controls(chart_type=chart_type, df=df, dropdown_options=columns)
         if st.checkbox("Show Columns"):
-	    all_column = list(df.columns)
-	    st.write(all_column)
+	    	all_column = list(df.columns)
+	    	st.write(all_column)
   st.subheader('2. Enter text')
   if st.checkbox("Input text"):
     text=st.text_area("Enter the text","Type Here ..")
