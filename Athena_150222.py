@@ -353,10 +353,22 @@ def main():
           u,v,w=a
           plot = px.histogram(data_frame=df, x=u, y=v, color=w)
           st.plotly_chart(plot)
+      elif Chart_type==[]:
+        a= common_elements2(token(text), columns)
+        if len(a)==1:
+          plot = px.scatter(data_frame=df, x=a)
+          st.plotly_chart(plot)
+        elif len(a)==2:
+          b,c=a
+          plot = px.scatter(data_frame=df, x=b, y=c)
+          st.plotly_chart(plot)
+        elif len(a)==3:
+          d,e,f=a
+          plot = px.scatter(data_frame=df, x=d, y=e, color=f)
+          st.plotly_chart(plot)
 
       # st.markdown(a)
       # st.markdown(b)
 
 if __name__ == '__main__':
 	main()  
-
