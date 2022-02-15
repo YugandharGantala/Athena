@@ -198,8 +198,9 @@ def main():
     if data is not None:
         df=pd.read_csv(data)
         columns = list(df.columns)
-	st.write(df.columns)
-	#st.markdown('columns')
+	if st.checkbox("Show Columns"):
+	  all_columns = df.columns.to_list()
+	  st.write(all_columns)
         columns.append(None)
         st.sidebar.subheader("Chart selection")
         chart_type = st.sidebar.selectbox(label="Select your chart type.",
