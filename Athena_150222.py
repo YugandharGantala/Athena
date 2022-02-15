@@ -198,14 +198,11 @@ def main():
     if data is not None:
         df=pd.read_csv(data)
         columns = list(df.columns)
-	if st.checkbox("Show Columns"):
-	  all_columns = df.columns.to_list()
-	  st.write(all_columns)
         columns.append(None)
         st.sidebar.subheader("Chart selection")
         chart_type = st.sidebar.selectbox(label="Select your chart type.",
-                                                options=['None', 'Scatter plots', 'Line Chart', 'Pie Charts',
-                                                        'Histogram', 'Box plots', 'Heatmap'])  # 'Line plots',
+                                                options=['Scatter plots', 'Line Chart', 'Pie Charts',
+                                                        'Histogram', 'Box plots', 'Heatmap', 'None'])  # 'Line plots',
         graph_controls(chart_type=chart_type, df=df, dropdown_options=columns)
   st.subheader('2. Enter text')
   if st.checkbox("Input text"):
