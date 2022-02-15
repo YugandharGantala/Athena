@@ -197,12 +197,11 @@ def main():
 
     if data is not None:
         df=pd.read_csv(data)
-	if st.checkbox("Show Columns"):
-	    	all_column = list(df.columns)
-	    	st.write(all_column)
+        if st.checkbox("Show Columns"):
+          show_columns=df.columns.to_list()
+          st.write(show_columns)
         columns = list(df.columns)
         columns.append(None)
-	#st.write(columns)
         st.sidebar.subheader("Chart selection")
         chart_type = st.sidebar.selectbox(label="Select your chart type.",
                                                 options=['None', 'Scatter plots', 'Line Chart', 'Pie Charts',
