@@ -308,7 +308,7 @@ def main():
         chart_type = st.sidebar.selectbox(label="Select your chart type.",
                                                 options=['Scatter plots', 'Line Chart', 'Pie Charts',
                                                         'Histogram', 'Box plots', 'Heatmap'])  # 'Line plots',
-     graph_controls(chart_type=chart_type, df=df, dropdown_options=columns)
+  graph_controls(chart_type=chart_type, df=df, dropdown_options=columns)
   st.subheader('2. Enter text')
   if st.checkbox("Input text"):
     text=st.text_area("Enter the text","Type Here ..")
