@@ -198,7 +198,7 @@ def main():
     if data is not None:
         df=pd.read_csv(data)
         columns = list(df.columns)
-	st.write(columns)
+	#st.write(columns)
 	st.markdown('columns')
         columns.append(None)
         st.sidebar.subheader("Chart selection")
