@@ -198,7 +198,7 @@ def main():
     if data is not None:
         df=pd.read_csv(data)
         if st.checkbox("Show Columns"):
-          show_columns=lisst(df.columns)
+          show_columns=list(df.columns)
           st.write(show_columns)
         columns = list(df.columns)
         columns.append(None)
