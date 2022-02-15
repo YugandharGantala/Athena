@@ -199,7 +199,7 @@ def main():
         df=pd.read_csv(data)
         columns = list(df.columns)
         columns.append(None)
-	st.write(columns)
+	#st.write(columns)
         st.sidebar.subheader("Chart selection")
         chart_type = st.sidebar.selectbox(label="Select your chart type.",
                                                 options=['None', 'Scatter plots', 'Line Chart', 'Pie Charts',
