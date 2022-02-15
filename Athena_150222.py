@@ -205,8 +205,8 @@ def main():
                                                         'Histogram', 'Box plots', 'Heatmap'])  # 'Line plots',
         graph_controls(chart_type=chart_type, df=df, dropdown_options=columns)
         if st.checkbox("Show Columns"):
-				  all_column = df.column.to_list()
-				  st.write(all_column)
+	  all_column = df.columns.to_list()
+	  st.write(all_column)
   st.subheader('2. Enter text')
   if st.checkbox("Input text"):
     text=st.text_area("Enter the text","Type Here ..")
