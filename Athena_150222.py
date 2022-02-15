@@ -168,8 +168,7 @@ def graph_controls(chart_type, df, dropdown_options):
             color_value = st.sidebar.selectbox(label='Color(Selected Column should be categorical)', options=dropdown_options)
             title = st.sidebar.text_input(label='Title of chart')
 
-            #plot = px.pie(data_frame=df,names=name_value, color=color_value, title=title)
-	    plot = name_value.value_counts().plot.pie(autopct="%1.1f%%")
+            plot = px.pie(data_frame=df,names=name_value, color=color_value, title=title)
             st.subheader("Chart")
             st.plotly_chart(plot)
 
@@ -199,7 +198,7 @@ def main():
     if data is not None:
         df=pd.read_csv(data)
         if st.checkbox("Show Columns"):
-          show_columns=list(df.columns)
+          show_columns=df.columns.to_list()
           st.write(show_columns)
         columns = list(df.columns)
         columns.append(None)
@@ -232,7 +231,8 @@ def main():
       elif Chart_type==['piechart']:
         a= common_elements2(token(text), columns)
         if len(a)==1:
-          plot = px.pie(data_frame=df, names=a)
+          #plot = px.pie(data_frame=df, names=a)
+          plot = a.value_counts().plot.pie(autopct="%1.1f%%")
           st.plotly_chart(plot)
         elif len(a)==2:
           b,c=a
