@@ -232,7 +232,7 @@ def main():
         a= common_elements2(token(text), columns)
         if len(a)==1:
           #plot = px.pie(data_frame=df, names=a)
-          plot = a.value_counts().plot.pie(autopct="%1.1f%%")
+          plot = df[a].value_counts().plot.pie(autopct="%1.1f%%")
           st.write(plot)
           st.pyplot()
         elif len(a)==2:
