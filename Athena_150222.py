@@ -197,6 +197,9 @@ def main():
 
     if data is not None:
         df=pd.read_csv(data)
+	if st.checkbox("Show Columns"):
+	    	all_column = list(df.columns)
+	    	st.write(all_column)
         columns = list(df.columns)
         columns.append(None)
 	#st.write(columns)
@@ -205,9 +208,6 @@ def main():
                                                 options=['None', 'Scatter plots', 'Line Chart', 'Pie Charts',
                                                         'Histogram', 'Box plots', 'Heatmap'])  # 'Line plots',
         graph_controls(chart_type=chart_type, df=df, dropdown_options=columns)
-        if st.checkbox("Show Columns"):
-	    	all_column = list(df.columns)
-	    	st.write(all_column)
   st.subheader('2. Enter text')
   if st.checkbox("Input text"):
     text=st.text_area("Enter the text","Type Here ..")
