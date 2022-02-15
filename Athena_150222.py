@@ -256,7 +256,8 @@ def main():
       elif Chart_type==[]:
         a= common_elements2(token(text), columns)
         if len(a)==1:
-          a1=df[a].nunique()
+	  text = ' '.join(a)
+          a1=df[text].nunique()
           if a1>=15:
             plot = px.scatter(data_frame=df, x=a)
             st.plotly_chart(plot)
