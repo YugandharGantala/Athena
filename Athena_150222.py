@@ -233,7 +233,8 @@ def main():
         if len(a)==1:
           #plot = px.pie(data_frame=df, names=a)
           plot = a.value_counts().plot.pie(autopct="%1.1f%%")
-          st.plotly_chart(plot)
+	  st.write(plot)
+          st.pyplot()
         elif len(a)==2:
           b,c=a
           plot = px.pie(data_frame=df, names=b, color=c)
