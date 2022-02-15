@@ -256,8 +256,14 @@ def main():
       elif Chart_type==[]:
         a= common_elements2(token(text), columns)
         if len(a)==1:
-          plot = px.scatter(data_frame=df, x=a)
-          st.plotly_chart(plot)
+          a1=a.nunique()
+          if a1>=15:
+            plot = px.scatter(data_frame=df, x=a)
+            st.plotly_chart(plot)
+          elif a1<15:
+            plot = df[a].value_counts().plot.pie(autopct="%1.1f%%")
+            st.write(plot)
+            st.pyplot()
         elif len(a)==2:
           b,c=a
           plot = px.scatter(data_frame=df, x=b, y=c)
