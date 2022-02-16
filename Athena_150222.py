@@ -199,7 +199,7 @@ def main():
         df=pd.read_csv(data)
         if st.checkbox("Show Columns"):
           show_columns=df.columns.to_list()
-          st.write(show_columns)
+          st.markdown(show_columns)
         columns = list(df.columns)
         columns.append(None)
         st.sidebar.subheader("Chart selection")
