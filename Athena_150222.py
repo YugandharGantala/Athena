@@ -243,15 +243,15 @@ def main():
       elif Chart_type==['histogram']:
         a= common_elements2(token(text), columns)
         if len(a)==1:
-          plot = px.bar(data_frame=df, x=a, barmode='group')
+          plot = px.histogram(data_frame=df, x=a, barmode='group')
           st.plotly_chart(plot)
         elif len(a)==2:
           b,c=a
-          plot = px.bar(data_frame=df, x=b, y=c, barmode='group')
+          plot = px.histogram(data_frame=df, x=b, y=c, barmode='group')
           st.plotly_chart(plot)
         elif len(a)==3:
           u,v,w=a
-          plot = px.bar(data_frame=df, x=u, y=v, color=w, barmode='group')
+          plot = px.histogram(data_frame=df, x=u, y=v, color=w, barmode='group')
           st.plotly_chart(plot)
       elif Chart_type==[]:
         a= common_elements2(token(text), columns)
